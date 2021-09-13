@@ -21,6 +21,7 @@ SPACE COMPLEXITY: O(N)
 '''
 
 from typing import List
+import heapq
 
 
 class Solution:
@@ -43,5 +44,20 @@ class Solution:
                     inter[1])  # NOTE: need to make sure a new room wasn't filled before filling. Use a flag
             else:
                 rooms.append(inter[1])
+
+        return len(rooms)
+
+    def minMeetingRoomsQueue(self, intervals: List[List[int]]) -> int:
+        intervals.sort(key=lambda interval: interval[0])
+
+        rooms = []
+
+        for inter in intervals:
+            if not rooms or inter[0] < rooms[0]:
+                heapq.heappush(rooms, inter[1])
+
+            if inter[0] >= rooms[0]: # Needs = bc a meeting can take a room if it starts when another ends
+                heapq.heappop(rooms)
+                heapq.heappush(rooms, inter[1])
 
         return len(rooms)
