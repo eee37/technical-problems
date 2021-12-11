@@ -52,3 +52,21 @@ class LinkedListFromList:
         print(print_statement + '-> null')
 
 
+
+class LinkedListHelper:
+    @staticmethod
+    def convert(lst):
+        cur = dummy = ListNode(0)
+        for e in lst:
+            cur.next = ListNode(e)
+            cur = cur.next
+        return dummy.next
+
+    @staticmethod
+    def print_list(head):
+        node = head
+        print_statement = ''
+        while node is not None:
+            print_statement += '->' + str(node.val)
+            node = node.next
+        print(print_statement + '-> null')

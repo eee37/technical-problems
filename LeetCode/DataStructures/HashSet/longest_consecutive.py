@@ -1,5 +1,6 @@
 # from collections import default_dict NOTE: COMPILE ERROR
 '''
+    LC: #128
     OFFICIAL SOL OPTIMIZATIONS:
         1) Uses python's hashset set: set(list: list) -> set. item in set -> boolean
         2) max function to update longest consecutive sequence
