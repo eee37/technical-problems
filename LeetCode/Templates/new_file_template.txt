@@ -1,10 +1,17 @@
 '''
 ******************* PROBLEM STATEMENT
+LC # ___
 
 ******************* NOTES
+******** MY IMPLEMENTATION:
 
 TIME COMPLEXITY:
 SPACE COMPLEXITY:
 
-******************* SOLUTION
+******** SOLUTION
+
+TIME COMPLEXITY:
+SPACE COMPLEXITY:
+
+******************* TAGS
 '''
