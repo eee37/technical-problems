@@ -13,6 +13,12 @@
     Solution Notes:
         - Approach #1
             - Note that it has bugs view other user submited solutions instead
+
+        https://leetcode.com/problems/max-stack/discuss/309621/Python-using-stack-%2B-heap-%2B-set-with-explanation-and-discussion-of-performance
+        - This approach uses a stack a heap and a set
+        - Stack for tracking recents
+        - A heap for tracking largest
+        - A set for tracking unsynced elements that need to be deleted from one
 '''
 
 

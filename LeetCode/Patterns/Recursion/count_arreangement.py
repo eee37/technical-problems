@@ -1,8 +1,18 @@
 '''
 ******************* PROBLEM STATEMENT
-LC # 526
+LC #526
 #LinkedIn
 ******************* NOTES
+    - Need to somehow track all counts. Difficult in this case cause its not a DP problem. Passing a var doesnt work well either
+    my solution is to use a class var that exists outside the scope of fxn. 
+    Solution aggregates all the responses by calling sum on all the results
+    - Approach 3 is the easiest to read
+        - Use a list to keep track of what has been tried
+        - Starting a position 1 try every possible number and mark the number as visited
+        - For the ones that work move to the next position and try all numbers that arent mark as visited
+        - Add to count once all positions have been visited and REMEMBER to unmark a position as visited after its been tried
+    https://leetcode.com/problems/beautiful-arrangement/discuss/99738/Easy-Python-~230ms
+    This python solution takes similar approach
 ******** MY IMPLEMENTATION:
 
 TIME COMPLEXITY: O(N!)

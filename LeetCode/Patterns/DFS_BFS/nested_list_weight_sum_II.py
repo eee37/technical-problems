@@ -1,5 +1,6 @@
 '''
-    LC # 364
+    LC #364
+    #LinkedIn
     
     NOTE:
         - Immutable vars, like string or int, need to be modified in scope if they are being modified in a nested fxn (see max_d in this case)
@@ -8,6 +9,17 @@
     - Space Complexity: O(n) can be reduced to O(1) by running two iterations. first one just calculates max depth
     
     - This solution is most similar to approach #1 except it does one pass
+
+    - Both DFS and BFS have same time and space complexity
+    DFS performs better when less nesting (less depth means smaller stack)
+    BFS peforms better when less large deep nested lists (queue grows with size of nested lists)
+
+    NOTE: 
+    - In DFS approach. Recursive fxn returns all values needed. Note that at each nested level
+    values are aggregated and then passed up
+    - In BFS approach. All values in a given level are ingested at the same round bc they are added as
+    integers to the queue together in the previous round
+
 '''
 # """
 # This is the interface that allows for creating nested lists.
