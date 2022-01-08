@@ -1,22 +1,18 @@
 # Code, Technical Errors
 
 1. Compile
-2. Py, TS 
-
-## 1. Compile Errors
-
-1. Syntax
-
-## 2. Language Specific
-
-1. Method -> build-in method
-2. Syntax
+    1. Syntax
+2. Py, TS -> Language Specific
+    1. Method -> build-in method
+    2. Syntax
+3. Con -> Conceptual
 
 
 # Conceptual Errors
 
 1. DS -> Datastrucure
-2. On
+2. TS -> Time Complexity
+3. Ap -> Approach
 3. _ -> Other
 
 

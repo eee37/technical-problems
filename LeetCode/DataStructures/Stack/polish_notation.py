@@ -10,6 +10,7 @@ SPACE COMPLEXITY:
 
 ******** SOLUTION
 
+- NOTE: Solution uses hashmap for more elegant solution
 TIME COMPLEXITY: On
 SPACE COMPLEXITY: On
 
