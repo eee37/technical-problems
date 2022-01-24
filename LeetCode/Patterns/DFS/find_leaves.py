@@ -32,8 +32,13 @@ class TreeNode:
 Q: Can we assum tree nodes unique
 
 n = # nodes
-Time:  O(n)
+Time:  O(n). This is actually O(n logn) I think bc we need to perform DFS for each level. Optimal solution (solution 2) only scans the tree once
 Space: O(n) if you count result ow O(logn)
+
+Trick is that nodes are collected based on height where height is measured as distance to deepest leaf node
+
+Optimal Solution essentially calculates the height in one pass and adds values to array based on height. 
+Recursion and DP are used to calculate height
 '''
 class Solution:
     def findLeaves(self, root: Optional[TreeNode]) -> List[List[int]]:
