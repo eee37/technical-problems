@@ -1,3 +1,15 @@
+'''
+#635
+    LC Solution 
+        Approach #1
+            * Converts times to seconds. Subtracts from year 1999 to prevent overflow
+            * Note to get times within a range. For end times you increment the granularity level by one to capture the actual upperbound
+            * Need to specially handle month and day of month since those are 1-based rather than 0 based
+        Approach # 2
+            * Treemap implementation in python
+                http://www.grantjenks.com/docs/sortedcontainers/
+#hashmap #array #treemap
+'''
 from datetime import datetime
 
 class LogSystem:
