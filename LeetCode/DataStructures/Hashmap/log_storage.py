@@ -61,7 +61,15 @@ class LogSystem:
                 
                 
         
-        
+# NOTE: Lessong on immutability of strings
+x = 'abc'
+y = x[0:1]
+y
+'a'
+x
+'abc'
+x = 'xyz'
+y
 
 
 # Your LogSystem object will be instantiated and called as such:
