@@ -39,6 +39,8 @@ class Solution:
             Approach 2 keeps code clean and simple by
                 1.) Keeping a copy of old matches and setting placeholder as an empty list
                 2.) Using iter to keep pointer to next char
+                https://www.geeksforgeeks.org/python-iter-method/
+                https://www.geeksforgeeks.org/python-next-method/
                 3.) Note that using iter or Trie or LinkedList is more optimal as it doesn't require you
                     to recreate the string
     '''
