@@ -1,3 +1,5 @@
+# https://leetcode.com/problems/find-three-consecutive-integers-that-sum-to-a-given-number/description/?fbclid=IwAR3P4qwsq1nxPJXg-3Ep32OLlkpP0cX29ulT-t584uqKbXx2xzaClQmnqyc_aem_AYWJJzCx9UD7U6zfKMk6M6ENzGVVFcCu0GmSlDQzFU0IR6efQH5vl1wid-cfaajKC6w
+
 from typing import List
 
 '''
