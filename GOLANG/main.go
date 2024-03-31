@@ -1,3 +1,13 @@
+/*
+This is a simple program that generates a template for Leetcode questions. It takes the leetcode id and the question name as input and generates a markdown file with the template for the question and a go file with the same name as the question.
+
+Enhancements:
+- Add a flag to specify the directory where the files should be generated
+- Fill out markdown file details with the leetcode id and question name
+- Create test file automatically
+- Consider replacing spaces with _ in the file names
+- Modularize the code
+*/
 package main
 
 import (
