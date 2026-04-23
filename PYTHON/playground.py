@@ -1,51 +1,43 @@
-# def f(): 
-#     print(s)
-   
-# # Global scope
-# s = "I love Geeksforgeeks"
-# f()
-import sys
+class Solution(object):
+    def simplifyPath(self, path):
+        """
+        :type path: str
+        :rtype: str
+        """
+        sub_paths = []
 
-# WORKS
-def g():
-    s = "I love Geeksforgeeks"
-    def f(): 
-        print(s)
-    f()
+        cur = 0 # ASSUME: They alls start with / ?
+        if len(path) == 1:
+            return path
 
-g()
-
-
-def g():
-    s = "I love Geeksforgeeks"
-    def f(): 
-        print(s) # NOTE: "s" is not defined
-        s = 'No  I dont'
-    f()
-
-g()
-
-
-
-# Note: You can unpack arrays
-x = [[1,2]]
-for a,b in x:
-    print(f'{a} {b}')
-
-# def find_in_order_successor(self, inputNode):
-#     if self.root is None:
-#         return None
-
-#     result = 1
-
-#     def dfs(n): # NOTE: If not passed in result and inputNode are out of scope
-#         if n is None:
-#             return
-#         print(result) # NOTE: Compile. Can only ref global var if it is not re-assigned inside fxn o.w local reference takea precedence. If you try to useit prior to reassignment in nested fxn you could get an error due to var not being assigned yet
-#         if n == 1:
-#             return n
-#         return
-
-#     dfs(self.root)
-
-#     return result if result.key != sys.maxsize else None # should return 11. Getting AttributeError
+        while cur < len(path):
+            print(sub_paths)
+            print(cur)
+            next_slash = path[cur+1:].find('/') + 1 + cur # bug: next_slash = path[cur+1:].find('/') it omits the first character hence it will alway be off by one
+            if next_slash == -1:
+                print('end')
+                sub_paths.append(path[cur+1:])
+                break
+            sub_paths.append(path[cur+1:next_slash])
+            if next_slash == len(path)-1:
+                break
+            cur = next_slash# bug: need to add next_slash to cur as I only consider substring in finding indexcur = next_slash
+            # truncate forward slashes
+            while cur < len(path)-1:
+                if path[cur+1] == '/':
+                    cur +=1
+                else:
+                    break
+        
+        ans = '/'
+        while len(sub_paths) > 0:
+            nxt = sub_paths.pop()
+            if nxt == '.':
+                continue
+            elif nxt == '..' and len(sub_paths) > 0:
+                sub_paths.pop()
+            else:
+                ans += ans + nxt
+        return ans
+            
+            

@@ -1,3 +1,13 @@
+"""
+    https://leetcode.com/problems/remove-nth-node-from-end-of-list/editorial/
+    #19
+    Struggled implementing this one.
+    Key is that want pointers to be n nodes apart so that left pointer's next node is the one to be deleted
+    Left pointer needs to be 1 behind to make deleting possible in one pass
+    The use of a dummy node at the beginning enables to solve the base case -> 1 node
+    Also need to realize that in the end right will be None. Right past the tail node
+"""
+
 # Definition for singly-linked list.
 from typing import List
 
@@ -40,8 +50,6 @@ class LinkedListFromList:
             curr = new_node
             if index == 0:
                 self.head = curr
-        return self.head
-
 
 
     def print_list(self):
@@ -53,21 +61,28 @@ class LinkedListFromList:
         print(print_statement + '-> null')
 
 
+def removeNthFromEnd(head, n):
+    """
+    :type head: Optional[ListNode]
+    :type n: int
+    :rtype: Optional[ListNode]
+    """
+    dummy = ListNode(next=head)
+    left = dummy
+    right = dummy
 
-class LinkedListHelper:
-    @staticmethod
-    def convert(lst):
-        cur = dummy = ListNode(0)
-        for e in lst:
-            cur.next = ListNode(e)
-            cur = cur.next
-        return dummy.next
+    for _ in range(n+1):
+        right = right.next
+    
+    while right != None:
+        left = left.next
+        right = right.next
+    left.next = left.next.next
 
-    @staticmethod
-    def print_list(head):
-        node = head
-        print_statement = ''
-        while node is not None:
-            print_statement += '->' + str(node.val)
-            node = node.next
-        print(print_statement + '-> null')
+    return dummy.next
+
+test = LinkedListFromList([1,2,3,4,5]).head
+result = removeNthFromEnd(test, 2)
+result.print_node()
+        
+        
